@@ -1,0 +1,11 @@
+.env
+.vscode/
+*.log
+.DS_Store
+public/tambah_admin.php
+public/face_recognition_api.py
+public/uploads/
+public/test.php
+public/test_db.php
+public/test_upload.php
+public/cek_folder.php
