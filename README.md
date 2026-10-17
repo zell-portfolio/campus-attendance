@@ -49,7 +49,7 @@ A web application that records student and lecturer attendance automatically usi
 
 ### Installation
 
-1. Copy this project into your web root (for XAMPP, `htdocs`) in a folder named exactly **`kampus-absensi`**. The application uses `/kampus-absensi/public/` in its paths.
+1. Clone the repository into your web root (for XAMPP, `htdocs`) under the folder name **`kampus-absensi`**, because the application uses `/kampus-absensi/public/` in its paths: `git clone https://github.com/zell-portfolio/campus-attendance.git kampus-absensi`. If you download the ZIP instead, rename the extracted folder to `kampus-absensi`.
 2. Open phpMyAdmin and import `kampus_absensi_db.sql`. The file creates the `kampus_absensi_db` database and its tables.
 3. Check the database settings in `config/database.php`. The defaults match a standard XAMPP install (`localhost`, user `root`, empty password). `.env.example` lists the same values together with the base URL.
 4. Open `http://localhost/kampus-absensi/public/setup_folders.php` once to create the upload folders (`public/uploads/faces`, `videos`, `pdfs`).
@@ -68,7 +68,7 @@ All demo accounts share the same password.
 ## Important Notes
 
 1. **Face photos are not included.** The `public/uploads/` folder is excluded from the repository because face photos are personal data. To try face recognition, log in as Admin, open **Upload Wajah** (face upload), and upload a photo for the user you want to test.
-2. **Bulk upload naming.** File names must start with the user ID, for example `MHS032 Student Name.jpg` or `D001 Lecturer Name.jpg`. After a bulk upload, open `public/batch_extract_descriptors.php` to extract the face descriptors from the new photos.
+2. **Bulk upload.** While logged in as Admin, open `http://localhost/kampus-absensi/public/upload_massal.php`. File names must start with the user ID, for example `MHS032 Student Name.jpg` or `D001 Lecturer Name.jpg`. After a bulk upload, open `public/batch_extract_descriptors.php` to extract the face descriptors from the new photos.
 3. **AI models are bundled.** The `public/assets/models/` folder contains the face-api.js model files, so face detection loads them locally instead of downloading them.
 4. **Attendance data is empty.** The SQL file ships with sample users and courses only. Record new attendance to see results in the attendance recap.
 
